@@ -15,11 +15,11 @@ module.exports = function(app){
 
         const payload = {
             id: 1,
-            name: 'Gleysson Rocha'
+            name: 'Gleysson Rocha',
         }
 
         const token = jwt.sign(payload, secretKey, {
-            expiresIn: '5m' 
+            expiresIn: '3m' 
         })
         
         const verify = jwt.verify(token, secretKey, function(err, decoded){

@@ -6,7 +6,7 @@ module.exports = function(app){
 
     v1.use(rateLimit({
         windowMs: 2 * 60 * 1000,
-        max: 5,
+        max: 100,
         message: "Muitos acessos realizados a partir deste IP, tente novamente após 5 minutos" 
     }))
 
