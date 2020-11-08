@@ -15,7 +15,10 @@
     "express-validator": "^6.6.1",
     "helmet": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
     "dotenv-safe": "^8.2.0",

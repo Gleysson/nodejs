@@ -1,11 +1,22 @@
-# DIA 02 - 04/11/22
+# DIA 03
 
-- Revisão do Dia 01.
+- Instalar e Configurar Acesso ao Banco de Dados
 
-- Serveless.
-- Dicas de Segurança de API.
-  - helmet
-  - rating limit
-- Validação de Campos API.
-- Middlewares.
-- Autenticação JWT.
+- Dependências:
+
+  > yarn add mysql2 sequelize sequelize-cli
+
+- Inicializar o projeto.
+
+  > yarn sequelize init
+
+- Alterar arquivo de configuração para pasta dentro de src.
+- Organizar pastas e diretórios criados automaticamente pelo sequelize.
+- Criar arquivo de configuração do sequelize com o novo caminho das pastas.
+- Atualizar o arquivo models/index.js com a configuração correta.
+- Criar primeira migration
+
+  > yarn sequelize migration:create --name=create-table-users
+
+- Executar migration
+  > yarn sequelize db:migrate
