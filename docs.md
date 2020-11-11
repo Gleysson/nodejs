@@ -37,3 +37,5 @@
   > yarn sequelize db:migrate:undo
 
 - Criar Seed e Executar
+  > yarn sequelize seed:generate --name insert-users-tests
+  > yarn sequelize db:seed:all
