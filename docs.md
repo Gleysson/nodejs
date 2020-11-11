@@ -13,6 +13,16 @@
 - Alterar arquivo de configuração para pasta dentro de src.
 - Organizar pastas e diretórios criados automaticamente pelo sequelize.
 - Criar arquivo de configuração do sequelize com o novo caminho das pastas.
+
+  const path = require('path');
+
+  module.exports = {
+  'config': path.resolve('src/config', 'database.js'),
+  'models-path': path.resolve('src', 'models'),
+  'seeders-path': path.resolve('database', 'seeders'),
+  'migrations-path': path.resolve('database', 'migrations'),
+  };
+
 - Atualizar o arquivo models/index.js com a configuração correta.
 - Criar primeira migration
 
