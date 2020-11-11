@@ -19,4 +19,11 @@
   > yarn sequelize migration:create --name=create-table-users
 
 - Executar migration
+
   > yarn sequelize db:migrate
+
+- Reverter migration
+
+  > yarn sequelize db:migrate:undo
+
+- Criar Seed e Executar
