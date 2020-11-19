@@ -10,7 +10,6 @@ module.exports = function(app){
     this.index = async function(req, res, next){
 
 
-
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
@@ -19,8 +18,6 @@ module.exports = function(app){
 
         try {
             
-       
-
         const user = await db.User.findOne({
             where: {
                 email: req.body.email
