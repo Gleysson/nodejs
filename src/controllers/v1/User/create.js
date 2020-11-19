@@ -12,13 +12,13 @@ module.exports = function(app){
 
         try {
        
-        const salt = 5;
-        const hash = await bcrypt.hash(req.body.password, salt)
-
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
+
+        const salt = 5;
+        const hash = await bcrypt.hash(req.body.password, salt)
 
         const user = await db.User.create({
             name: req.body.name,

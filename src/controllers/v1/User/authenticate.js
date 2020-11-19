@@ -50,7 +50,7 @@ module.exports = function(app){
         })
 
     } catch (error) {
-            return res.send('error')
+        return res.send('error')
     }
 
     }

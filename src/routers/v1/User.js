@@ -16,7 +16,6 @@ module.exports = function(app){
     ] , controller.authenticate.index)
 
     router.post('/user', [
-
         body('email')
             .exists()
             .withMessage('Email é obrigatório')
