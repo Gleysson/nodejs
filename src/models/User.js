@@ -1,3 +1,6 @@
+const sequelizePaginate = require('sequelize-paginate')
+
+
 module.exports = (sequelize, DataTypes) => {
 
     const User = sequelize.define('User', {
@@ -11,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       email: DataTypes.STRING,
       senha: DataTypes.STRING,
     });
-  
+
+    sequelizePaginate.paginate(User)
     return User;
   }

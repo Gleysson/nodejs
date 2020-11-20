@@ -41,7 +41,7 @@ module.exports = function(app){
         }
 
         const token = jwt.sign(payload, secretKey, {
-            expiresIn: '3m' 
+            expiresIn: '15m' 
         })
         
 

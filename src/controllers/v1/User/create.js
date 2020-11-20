@@ -11,14 +11,15 @@ module.exports = function(app){
     this.index = async (req, res, next) => {
 
         try {
+
+        const salt = 5;
+        const hash = await bcrypt.hash(req.body.password, salt)
        
+
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-
-        const salt = 5;
-        const hash = await bcrypt.hash(req.body.password, salt)
 
         const user = await db.User.create({
             name: req.body.name,
@@ -32,6 +33,7 @@ module.exports = function(app){
         })
 
         } catch (error) {
+            console.log(error)
            return  res.status(500).send({
                 data: error,
                 msg: 'Falha ao cadastrar usuário',
