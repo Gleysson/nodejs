@@ -4,7 +4,8 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon ./src/bin/server.js"
+    "dev": "nodemon ./src/bin/server.js",
+    "worker": "nodemon ./src/bin/worker.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
