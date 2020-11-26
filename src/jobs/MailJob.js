@@ -6,12 +6,21 @@ module.exports = function(app) {
 
         key: "MailJob",
         handle: async function({ data }){
-            await MailLib.sendMail({
-                from: 'App Job Mail <contato@mail.com>',
-                to: ` <${data.name}> <${data.email}>`,
-                subject: "Envio de Email Node",
-                html: "<p> Você recebeu um email </p>"
-            })
+
+            try {
+                await MailLib.sendMail({
+                    from: 'App Job Mail <contato@mail.com>',
+                    to: ` <${data.name}> <${data.email}>`,
+                    subject: "Envio de Email Node",
+                    html: "<p> Você recebeu um email </p>"
+                })
+
+                return Promise.resolve();
+
+            } catch (error) {
+                return Promise.reject(error);
+            }
+          
         }
     }
 

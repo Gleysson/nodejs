@@ -18,10 +18,15 @@ module.exports = function(app){
         MailQueue.add({
             name: req.body.name,
             email: req.body.email,
+        }, {
+            attempts: 5,
+            delay: 5000,
+            priority: 1,
+            backoff: 2000 
         })
 
         return res.send({
-            msg: "Success",
+            msg: "Sucesso",
         });
     }
 
