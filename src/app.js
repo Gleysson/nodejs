@@ -13,8 +13,9 @@ app.use('/api/v2', app.locals.version.v2 )
 
 consign()
   .include('./src/config')
+  .then('./src/libs')
   .then('./src/controllers')
-  .include('./src/middlewares')
+  .then('./src/middlewares')
   .then('./src/routers')
   .into(app);
 
